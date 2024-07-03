@@ -10,5 +10,4 @@ public interface UserService {
 
     public User save(User user);
     
-    void createUser();
 }

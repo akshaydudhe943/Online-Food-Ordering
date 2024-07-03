@@ -46,15 +46,4 @@ public class UserServiceImpl implements UserService {
         }
         return user;
     }
-    public void createUser() {
-        User user = new User();
-        user.setEmail("example@example.com");
-        user.setFullName("Example User");
-        user.setPassword("password");
-        user.setRole(USER_ROLE.ROLE_CUSTOMER);
-        user.setStatus(true);
-
-        saveUser(user);
-     }
-    
 }

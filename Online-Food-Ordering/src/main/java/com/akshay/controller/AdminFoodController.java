@@ -25,7 +25,7 @@ public class AdminFoodController {
 	
 	@Autowired
 	private FoodService foodService;
-
+	
 	@Autowired
 	private RestaurantService restaurantService;
 	
