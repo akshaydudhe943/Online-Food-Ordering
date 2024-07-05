@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.akshay.model.Cart;
 import com.akshay.model.CartItem;
+import com.akshay.model.User;
 import com.akshay.request.AddCartItemRequest;
 import com.akshay.request.UpdateCartitemRequest;
 import com.akshay.service.CartServices;
+import com.akshay.service.UserService;
 
 @RestController
 @RequestMapping("/api")
@@ -24,6 +26,9 @@ public class CartController {
 
 	@Autowired
 	private CartServices cartServices;
+	
+	@Autowired
+	private UserService userService;
 	
 	@PutMapping("/cart/add")
 	public ResponseEntity<CartItem> addItemToCart(@RequestBody AddCartItemRequest request,@RequestHeader("Authorization") String jwt)throws Exception{
@@ -45,15 +50,15 @@ public class CartController {
 	
 	@PutMapping("/cart/clear")
 	public ResponseEntity<Cart> clearCart(@RequestHeader("Authorization") String jwt)throws Exception{
-		
-		Cart cart = cartServices.clearCart(jwt);
+		User user = userService.findUserByJwtToken(jwt);
+		Cart cart = cartServices.clearCart(user.getId());
 		return new ResponseEntity<>(cart,HttpStatus.OK);
 	}
 	
 	@GetMapping("/cart")
 	public ResponseEntity<Cart> findUserCart(@RequestHeader("Authorization") String jwt)throws Exception{
-		
-		Cart cart = cartServices.findCartByUserId(jwt);
+		User user = userService.findUserByJwtToken(jwt);
+		Cart cart = cartServices.findCartByUserId(user.getId());
 		return new ResponseEntity<>(cart,HttpStatus.OK);
 	}
 	

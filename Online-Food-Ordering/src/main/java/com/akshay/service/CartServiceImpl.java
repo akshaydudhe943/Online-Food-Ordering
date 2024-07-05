@@ -11,7 +11,6 @@ import com.akshay.model.Food;
 import com.akshay.model.User;
 import com.akshay.repository.CartItemRepository;
 import com.akshay.repository.CartRepository;
-import com.akshay.repository.UserRepository;
 import com.akshay.request.AddCartItemRequest;
 
 @Service
@@ -110,15 +109,16 @@ public class CartServiceImpl implements CartServices {
 	}
 
 	@Override
-	public Cart findCartByUserId(String jwt) throws Exception {
-		User user = userService.findUserByJwtToken(jwt);
-		return cartRepository.findByCustomerId(user.getId());
+	public Cart findCartByUserId(Long id) throws Exception {
+		
+		Cart cart = cartRepository.findByCustomerId(id);
+		cart.setTotal(calculateCartTotal(cart));
+		return cartRepository.save(cart);
 	}
 
 	@Override
-	public Cart clearCart(String jwt) throws Exception {
-		User user = userService.findUserByJwtToken(jwt);
-		Cart cart = findCartByUserId(jwt);
+	public Cart clearCart(Long id) throws Exception {
+		Cart cart = findCartByUserId(id);
 		
 		cart.getItem().clear();
 		return cartRepository.save(cart);

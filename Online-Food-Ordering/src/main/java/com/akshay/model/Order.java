@@ -44,11 +44,11 @@ public class Order {
 	private Address deliveryAddress;
 	
 	@OneToMany
-	private List<OrderItems> items;
+	private List<OrderItem> items;
 	
 	//private Payment payment;
 	
 	private int totalItems;
 	
-	private int totalPrice;
+	private Long totalPrice;
 }
