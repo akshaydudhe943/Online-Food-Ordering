@@ -1,0 +1,30 @@
+export const topMeels=[
+    {
+        image:"https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg",
+        title:"Pizza"
+    },
+    {
+        image:"https://media.istockphoto.com/id/1482650278/photo/juicy-ground-pork-and-bacon-cheeseburger-with-fries.jpg?s=2048x2048&w=is&k=20&c=y6MZUSsyMe29RzE4J3MT9H4JtZd4PwYf7x0BEnyVTqc=",
+        title:"Burger"
+    },
+    {
+        image:"https://media.istockphoto.com/id/157472912/photo/ice-cream-composition-on-a-bowl.jpg?s=2048x2048&w=is&k=20&c=Trm8Wksa3ozWfxSltDFy2DNcFNWTDEqZcRRpPUc5Paw=",
+        title:"Ice Cream"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2024/01/23/08/11/ai-generated-8527044_1280.jpg",
+        title:"Fries"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2014/01/24/04/05/fried-chicken-250863_960_720.jpg",
+        title:"Chicken"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2023/09/04/20/39/cake-8233676_1280.jpg",
+        title:"Cakes"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2016/08/09/11/24/sandwich-1580348_1280.jpg",
+        title:"Sandwich"
+    }
+]
