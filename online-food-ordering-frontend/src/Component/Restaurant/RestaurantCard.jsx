@@ -3,14 +3,14 @@ import { Card, Chip, IconButton } from "@mui/material";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
-export const RestaurantCard = () => {
+export const RestaurantCard = ({item}) => {
   return (
     <div>
       <Card className="w-[18rem]">
         <div className={`${true ? "cursor-pointer" : "cursor-not-allowed"} relative`}>
           <img
             className="w-full h-[10rem] rounded-t-md object-cover"
-            src="https://cdn.pixabay.com/photo/2017/07/15/13/45/french-restaurant-2506490_1280.jpg"
+            src={item.images[1]}
             alt=""
           />
         
@@ -39,3 +39,4 @@ export const RestaurantCard = () => {
     </div>
   );
 };
+export default RestaurantCard;

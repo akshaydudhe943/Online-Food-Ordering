@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.akshay.model.IngredientsCategory;
 import com.akshay.model.IngredientsItem;
@@ -11,6 +12,7 @@ import com.akshay.model.Restaurant;
 import com.akshay.repository.IngredientCategoryRepository;
 import com.akshay.repository.IngredientItemRepository;
 
+@Service
 public class IngredientsServiceImpl implements IngredientsService{
 	
 	@Autowired
